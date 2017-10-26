@@ -1,0 +1,51 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BattlePlanner.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WinX" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WinY" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="PlatoonW" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1334</Value>
+    </Setting>
+    <Setting Name="PlatoonH" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">750</Value>
+    </Setting>
+    <Setting Name="XStart" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">400</Value>
+    </Setting>
+    <Setting Name="YStart" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">235</Value>
+    </Setting>
+    <Setting Name="CellDim" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
+    <Setting Name="XOffset" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">115</Value>
+    </Setting>
+    <Setting Name="YOffset" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">137</Value>
+    </Setting>
+    <Setting Name="SubDim" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="Phase" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="SpreadsheetID" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="CompareSize" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">75</Value>
+    </Setting>
+    <Setting Name="Filter" Type="System.String" Scope="User">
+      <Value Profile="(Default)">light-side</Value>
+    </Setting>
+    <Setting Name="AutoPost" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

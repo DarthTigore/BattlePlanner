@@ -1,0 +1,75 @@
+﻿<Window x:Class="BattlePlanner.Windows.SettingsWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BattlePlanner.Windows"
+        mc:Ignorable="d"
+        Title="Settings" Height="555" Width="800" MinHeight="555" MinWidth="800" Icon="/BattlePlanner;component/Resources/Settings.ico" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
+    <Grid Background="LightGray">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="10,10,10,0">
+                <Label Content="Spreadsheet ID:"/>
+                <TextBox x:Name="tbID" Width="360" Height="20"/>
+            </StackPanel>
+            <CheckBox x:Name="checkAutoPost" Content="Auto-Post Units to Spreadsheet" Margin="102,10,0,0"/>
+
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="0,0,0,0">
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Start X:"/>
+                        <TextBox x:Name="tbStartX" Width="40" Height="20" ToolTip="X coordinate of top left start of unit grid."/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Start Y:"/>
+                        <TextBox x:Name="tbStartY" Width="40" Height="20" ToolTip="Y coordinate of top left start of unit grid."/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Cell Dim:"/>
+                        <TextBox x:Name="tbCellDim" Width="40" Height="20" ToolTip="Width/Height of units in grid."/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Offset X:"/>
+                        <TextBox x:Name="tbOffsetX" Width="40" Height="20" ToolTip="X offset between units."/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Offset Y:"/>
+                        <TextBox x:Name="tbOffsetY" Width="40" Height="20" ToolTip="Y offset between units."/>
+                    </StackPanel>
+
+                    <Canvas x:Name="canvasUnit" Width="128" Height="128" Margin="10,10,10,0">
+                        <Canvas.Background>
+                            <ImageBrush x:Name="brushUnitBackground"/>
+                        </Canvas.Background>
+                    </Canvas>
+
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Compare Dim:"/>
+                        <TextBox x:Name="tbCompareSize" Width="40" Height="20" ToolTip="Dimension to resize units to for comparison."/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,0" HorizontalAlignment="Right">
+                        <Label Content="Unit Crop:"/>
+                        <TextBox x:Name="tbSubDim" Width="40" Height="20" ToolTip="Pixels to crop from resized unit source for comparison."/>
+                    </StackPanel>
+
+                    <Button x:Name="buttonRefresh" Content="Refresh" Width="55" Margin="0,10,0,0" Click="buttonRefresh_Click"/>
+
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Button x:Name="buttonCancel" Content="Cancel" Width="55" Margin="0,0,0,0" Click="buttonCancel_Click"/>
+                        <Button x:Name="buttonSave" Content="Save" Width="55" Margin="10,0,0,0" Click="buttonSave_Click"/>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <ScrollViewer x:Name="scrollPlatoon" Width="620" Height="435" Margin="10,0,10,0" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Canvas x:Name="canvasPlatoon">
+                        <Canvas.Background>
+                            <ImageBrush x:Name="brushBackground"/>
+                        </Canvas.Background>
+                    </Canvas>
+                </ScrollViewer>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Units>
+  <!-- Heroes -->
+  <Unit Name="Ahsoka Tano (Fulcrum)" PixelPct="0.65"/>
+  <Unit Name="CC-2224 &quot;Cody&quot;" PixelPct="0.99" Group="Clone" />
+  <Unit Name="Chief Chirpa" PixelPct="0.65" />
+  <Unit Name="Chief Nebit" ColorPct="0.985" PixelPct="0.99" Group="Jawa" />
+  <Unit Name="Clone Sergeant - Phase I" PixelPct="0.99" />
+  <Unit Name="CT-21-0408 &quot;Echo&quot;" ColorPct="0.985" PixelPct="1" Group="Clone" />
+  <Unit Name="CT-5555 &quot;Fives&quot;" ColorPct="0.985" PixelPct="1" Group="Clone" />
+  <Unit Name="CT-7567 &quot;Rex&quot;" ColorPct="0.985" PixelPct="0.99" Group="Clone" />
+  <Unit Name="Dathcha" ColorPct="0.985" PixelPct="0.99" Group="Jawa" />
+  <Unit Name="Ewok Elder" PixelPct="0.65" />
+  <Unit Name="Ewok Scout" PixelPct="0.65" />
+  <Unit Name="Jawa" ColorPct="0.985" PixelPct="0.99" Group="Jawa" />
+  <Unit Name="Jawa Engineer" ColorPct="0.985" PixelPct="0.99" Group="Jawa" />
+  <Unit Name="Jawa Scavenger" ColorPct="0.985" PixelPct="0.99" Group="Jawa" />
+  <Unit Name="Logray" PixelPct="0.65" />
+  <Unit Name="Paploo" PixelPct="0.65" />
+  <Unit Name="R2-D2" PixelPct="0.8" />
+  <Unit Name="Teebo" PixelPct="0.65" />
+  <Unit Name="Wicket" PixelPct="0.65" />
+
+  <!-- Ships -->
+  <Unit Name="Ahsoka Tano's Jedi Starfighter" PixelPct="0.7" />
+  <Unit Name="Biggs Darklighter's X-wing" PixelPct="0.9" Group="Xwing" />
+  <Unit Name="Bistan's U-wing" PixelPct="0.999" Group="Uwing" />
+  <Unit Name="Cassian's U-wing" PixelPct="0.999" Group="Uwing" />
+  <Unit Name="Clone Sergeant's ARC-170" Group="CloneShip" />
+  <Unit Name="Geonosian Soldier's Starfighter" ColorPct="0.98" PixelPct="0.999" Group="GeoShip" />
+  <Unit Name="Geonosian Spy's Starfighter" ColorPct="0.98" PixelPct="0.999" Group="GeoShip" />
+  <Unit Name="Ghost" PixelPct="0.7" />
+  <Unit Name="Millennium Falcon (Ep VII)" ColorPct="0.97" PixelPct="0.55" />
+  <Unit Name="Poe Dameron's X-wing" PixelPct="0.9" Group="Xwing" />
+  <Unit Name="Resistance X-wing" PixelPct="0.9" Group="Xwing" />
+  <Unit Name="Rex's ARC-170" Group="CloneShip" />
+  <Unit Name="Sun Fac's Geonosian Starfighter" Group="GeoShip" />
+  <Unit Name="TIE Reaper" PixelPct="0.8" />
+  <Unit Name="Wedge Antilles's X-wing" PixelPct="0.9" Group="Xwing" />
+</Units>

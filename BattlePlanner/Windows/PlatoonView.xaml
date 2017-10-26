@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="BattlePlanner.PlatoonView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BattlePlanner"
+             mc:Ignorable="d" 
+             d:DesignHeight="195" d:DesignWidth="585">
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="115"/>
+            <ColumnDefinition Width="115"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="62"/>
+            <RowDefinition Height="62"/>
+            <RowDefinition Height="62"/>
+        </Grid.RowDefinitions>
+        
+        <local:DonationView x:Name="Donation11" Margin="0,5,0,0" Grid.Row="0" Grid.Column="0"/>
+        <local:DonationView x:Name="Donation12" Margin="5,5,0,0" Grid.Row="0" Grid.Column="1"/>
+        <local:DonationView x:Name="Donation13" Margin="5,5,0,0" Grid.Row="0" Grid.Column="2"/>
+        <local:DonationView x:Name="Donation14" Margin="5,5,0,0" Grid.Row="0" Grid.Column="3"/>
+        <local:DonationView x:Name="Donation15" Margin="5,5,0,0" Grid.Row="0" Grid.Column="4"/>
+
+        <local:DonationView x:Name="Donation21" Margin="0,5,0,0" Grid.Row="1" Grid.Column="0"/>
+        <local:DonationView x:Name="Donation22" Margin="5,5,0,0" Grid.Row="1" Grid.Column="1"/>
+        <local:DonationView x:Name="Donation23" Margin="5,5,0,0" Grid.Row="1" Grid.Column="2"/>
+        <local:DonationView x:Name="Donation24" Margin="5,5,0,0" Grid.Row="1" Grid.Column="3"/>
+        <local:DonationView x:Name="Donation25" Margin="5,5,0,0" Grid.Row="1" Grid.Column="4"/>
+
+        <local:DonationView x:Name="Donation31" Margin="0,5,0,0" Grid.Row="2" Grid.Column="0"/>
+        <local:DonationView x:Name="Donation32" Margin="5,5,0,0" Grid.Row="2" Grid.Column="1"/>
+        <local:DonationView x:Name="Donation33" Margin="5,5,0,0" Grid.Row="2" Grid.Column="2"/>
+        <local:DonationView x:Name="Donation34" Margin="5,5,0,0" Grid.Row="2" Grid.Column="3"/>
+        <local:DonationView x:Name="Donation35" Margin="5,5,0,0" Grid.Row="2" Grid.Column="4"/>
+
+    </Grid>
+</UserControl>

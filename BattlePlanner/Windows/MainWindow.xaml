@@ -1,0 +1,68 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BattlePlanner"
+        xmlns:Windows="clr-namespace:BattlePlanner.Windows" x:Class="BattlePlanner.MainWindow"
+        mc:Ignorable="d"
+        Title="Tigore's SWGoH Battle Planner" Height="640" Width="595" Closing="Window_Closing" ResizeMode="NoResize">
+
+    <DockPanel VerticalAlignment="Top">
+        <ToolBar x:Name="tbTools" DockPanel.Dock="Top" Height="26" Background="LightGray">
+            <Button x:Name="tbRefresh" ToolTip="Refresh Data from swgoh.gg" Click="tbRefresh_Click">
+                <Image Source="/BattlePlanner;component/Resources/DownloadFile.png"/>
+            </Button>
+            <Separator/>
+
+            <Button x:Name="tbProcess" ToolTip="Process the platoon screenshots" Click="tbProcess_Click">
+                <Image Source="/BattlePlanner;component/Resources/Run.png"/>
+            </Button>
+            <Label VerticalAlignment="Center" Padding="5,0,5,0" Content="Filter:"/>
+            <ComboBox x:Name="cbFilter" Width="80" SelectedIndex="0" SelectionChanged="cbFilter_SelectionChanged">
+                <ComboBoxItem>light-side</ComboBoxItem>
+                <ComboBoxItem>dark-side</ComboBoxItem>
+            </ComboBox>
+            <Separator/>
+            
+            <ComboBox x:Name="cbPhase" Width="70" SelectedIndex="0">
+                <ComboBoxItem>Phase 1</ComboBoxItem>
+                <ComboBoxItem>Phase 2</ComboBoxItem>
+                <ComboBoxItem>Phase 3</ComboBoxItem>
+                <ComboBoxItem>Phase 4</ComboBoxItem>
+                <ComboBoxItem>Phase 5</ComboBoxItem>
+                <ComboBoxItem>Phase 6</ComboBoxItem>
+            </ComboBox>
+            <Separator/>
+            
+            <Button x:Name="tbPrevious" ToolTip="Previous platoons" Click="tbPrevious_Click">
+                <Image Source="/BattlePlanner;component/Resources/Previous.png"/>
+            </Button>
+            
+            <Label x:Name="labelPlatoon" VerticalAlignment="Center" Padding="5,0,5,0" Content="Platoon 1"/>
+            <Button x:Name="tbNext" ToolTip="Next platoons" Click="tbNext_Click">
+                <Image Source="/BattlePlanner;component/Resources/Next.png"/>
+            </Button>
+            <Separator/>
+
+            <Button x:Name="tbWeb" ToolTip="Open spreadsheet in browser" Click="tbWeb_Click">
+                <Image Source="/BattlePlanner;component/Resources/Web.png"/>
+            </Button>
+            <Button x:Name="tbUpload" ToolTip="Upload results to Google Sheets" Click="tbUpload_Click">
+                <Image Source="/BattlePlanner;component/Resources/UploadFile.png"/>
+            </Button>
+            <Separator/>
+            
+            <Button x:Name="tbSettings" ToolTip="Settings" Click="tbSettings_Click">
+                <Image Source="/BattlePlanner;component/Resources/Settings.png"/>
+            </Button>
+        </ToolBar>
+
+        <StackPanel x:Name="panelPlattons" Background="#FF585858">
+            <local:PlatoonView x:Name="PlatoonView1" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+            <local:PlatoonView x:Name="PlatoonView2" Margin="0,5,0,0" HorizontalAlignment="Center"/>
+            <local:PlatoonView x:Name="PlatoonView3" Margin="0,5,0,10" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+    </DockPanel>
+</Window>
