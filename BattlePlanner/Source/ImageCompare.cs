@@ -263,6 +263,7 @@ namespace BattlePlanner
                     var nameExt = string.Format("{0}-{1}", nameBase, Path.GetFileNameWithoutExtension(match.BmpPath));
                     match.Thumb.Save(Path.Combine(outputPath, nameExt + ".png"));
                     donation.Name = match.Name;
+                    donation.Upload = true;
 #if DEBUG
                     Console.WriteLine("Unit found: Z{0} P{1} {2},{3} = {4}", platoon.Zone, platoon.Num, row + 1, col + 1, match.Name);
 #endif
