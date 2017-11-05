@@ -23,6 +23,8 @@ namespace BattlePlanner
         private ProgressBar Bar = null;
         private Thread Thread = null;
 
+        public static bool EndThread = false;
+
         public ImageCompare(Units units)
         {
             Singleton = this;
@@ -91,6 +93,7 @@ namespace BattlePlanner
             Phase = phase;
             Bar = bar;
             Filter = filter;
+            EndThread = false;
 
             Start();
 
@@ -217,6 +220,13 @@ namespace BattlePlanner
 
             foreach (var unit in UnitList)
             {
+                if (EndThread)
+                {
+                    EndThread = false;
+                    Thread.Abort();
+                    return false;
+                }
+
                 var matchedPixels = 0;    // track how close the match was
                 var loc = SearchBitmap(unit.Small, donateBmp, unit.ColorPct, unit.PixelPct, ref matchedPixels);
                 if (matchedPixels > closest)

@@ -91,6 +91,9 @@
     <Compile Include="Source\MatchLog.cs" />
     <Compile Include="Source\Presets.cs" />
     <Compile Include="Source\Spreadsheet.cs" />
+    <Compile Include="Windows\MatchControl.xaml.cs">
+      <DependentUpon>MatchControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PlatoonView.xaml.cs">
       <DependentUpon>PlatoonView.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\MatchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\PlatoonView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

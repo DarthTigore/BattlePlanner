@@ -2,6 +2,8 @@
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Drawing;
+using System.Windows.Media.Imaging;
 
 namespace BattlePlanner
 {
@@ -133,6 +135,30 @@ namespace BattlePlanner
                 return string.Empty;
             }
         }
+
+        /// <summary>
+        /// Convert a Bitmap to a BitmapImage
+        /// </summary>
+        /// <param name="bmp"></param>
+        /// <returns></returns>
+        public static BitmapImage BitmapToBitmapImage(Bitmap bmp)
+        {
+            
+            using (var memory = new MemoryStream())
+            {
+                bmp.Save(memory, System.Drawing.Imaging.ImageFormat.Png);
+                memory.Position = 0;
+
+                var bitmapImage = new BitmapImage();
+                bitmapImage.BeginInit();
+                bitmapImage.StreamSource = memory;
+                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapImage.EndInit();
+
+                return bitmapImage;
+            }
+        }
+
 
     }
 }

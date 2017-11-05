@@ -54,7 +54,7 @@ namespace BattlePlanner
             var fileName = string.Format("Zone{0}_{1}-{2}_{3}.png", platoon.Zone, platoon.Num, row, col);
             var askLoc = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "output", fileName);
             AskBmp = new Bitmap(askLoc);
-            AskImage.Source = BitmapToBitmapImage(AskBmp);
+            AskImage.Source = Utils.BitmapToBitmapImage(AskBmp);
 
             tbPixelPct.Text = (unit.PixelPct * 100.0).ToString();
             tbColorPct.Text = (unit.ColorPct * 100.0).ToString();
@@ -62,23 +62,6 @@ namespace BattlePlanner
             // backup the original settings
             PixelPctBackup = Unit.PixelPct;
             ColorPctBackup = Unit.ColorPct;
-        }
-
-        private BitmapImage BitmapToBitmapImage(Bitmap bmp)
-        {
-            using (var memory = new MemoryStream())
-            {
-                bmp.Save(memory, System.Drawing.Imaging.ImageFormat.Png);
-                memory.Position = 0;
-
-                var bitmapImage = new BitmapImage();
-                bitmapImage.BeginInit();
-                bitmapImage.StreamSource = memory;
-                bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                bitmapImage.EndInit();
-
-                return bitmapImage;
-            }
         }
 
         private void buttonTest_Click(object sender, RoutedEventArgs e)
@@ -123,7 +106,7 @@ namespace BattlePlanner
             if (files.Length == 1)
             {
                 MatchBmp = new Bitmap(files[0]);
-                MatchImage.Source = BitmapToBitmapImage(MatchBmp);
+                MatchImage.Source = Utils.BitmapToBitmapImage(MatchBmp);
             }
         }
 
