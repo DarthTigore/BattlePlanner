@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Units>
+  <Unit Name="Aayla Secura" BmpPath="light-side\aaylasecura.png" />
+  <Unit Name="Admiral Ackbar" BmpPath="light-side\ackbaradmiral.png" />
+  <Unit Name="Ahsoka Tano" BmpPath="light-side\ahsoka.png" />
+  <Unit Name="Ahsoka Tano (Fulcrum)" BmpPath="light-side\ahsokaadult.png" />
+  <Unit Name="Barriss Offee" BmpPath="light-side\barriss_light.png" />
+  <Unit Name="Baze Malbus" BmpPath="light-side\bazemalbus.png" />
+  <Unit Name="BB-8" BmpPath="light-side\bb8.png" />
+  <Unit Name="Biggs Darklighter" BmpPath="light-side\rebelpilot_biggs.png" />
+  <Unit Name="Bistan" BmpPath="light-side\bistan.png" />
+  <Unit Name="Bodhi Rook" BmpPath="light-side\bodhi.png" />
+  <Unit Name="Han Solo" BmpPath="light-side\han.png" />
+  <Unit Name="Cassian Andor" BmpPath="light-side\cassian.png" />
+  <Unit Name="CC-2224 &quot;Cody&quot;" BmpPath="light-side\trooperclone_cody.png" />
+  <Unit Name="Chief Chirpa" BmpPath="light-side\ewok_chirpa.png" />
+  <Unit Name="Chief Nebit" BmpPath="light-side\jawa_nebit.png" />
+  <Unit Name="Chirrut Îmwe" BmpPath="light-side\chirrut.png" />
+  <Unit Name="Chopper" BmpPath="light-side\chopper.png" />
+  <Unit Name="Clone Sergeant - Phase I" BmpPath="light-side\trooperclonegreen.png" />
+  <Unit Name="Clone Wars Chewbacca" BmpPath="light-side\chewbacca.png" />
+  <Unit Name="Commander Luke Skywalker" BmpPath="light-side\lukebespin.png" />
+  <Unit Name="Coruscant Underworld Police" BmpPath="light-side\coruscantpolice.png" />
+  <Unit Name="CT-21-0408 &quot;Echo&quot;" BmpPath="light-side\trooperclone_echo.png" ColorPct="0.99" />
+  <Unit Name="CT-5555 &quot;Fives&quot;" BmpPath="light-side\trooperclone_fives.png" />
+  <Unit Name="CT-7567 &quot;Rex&quot;" BmpPath="light-side\trooperclone_rex.png" />
+  <Unit Name="Dathcha" BmpPath="light-side\jawa_dathcha.png" />
+  <Unit Name="Eeth Koth" BmpPath="light-side\eethkoth.png" />
+  <Unit Name="Ewok Elder" BmpPath="light-side\ewok_chief.png" />
+  <Unit Name="Ewok Scout" BmpPath="light-side\ewok_scout.png" />
+  <Unit Name="Ezra Bridger" BmpPath="light-side\ezra_s3.png" />
+  <Unit Name="Finn" BmpPath="light-side\finnjakku.png" />
+  <Unit Name="Garazeb &quot;Zeb&quot; Orrelios" BmpPath="light-side\zeb_s3.png" />
+  <Unit Name="General Kenobi" BmpPath="light-side\obiwangeneral.png" />
+  <Unit Name="Grand Master Yoda" BmpPath="light-side\yodagrandmaster.png" />
+  <Unit Name="Hera Syndulla" BmpPath="light-side\hera_s3.png" />
+  <Unit Name="Hermit Yoda" BmpPath="light-side\yodahermit.png" />
+  <Unit Name="Hoth Rebel Scout" BmpPath="light-side\rebelhothscout.png" />
+  <Unit Name="Hoth Rebel Soldier" BmpPath="light-side\rebelhoth.png" />
+  <Unit Name="Ima-Gun Di" BmpPath="light-side\imagundi.png" />
+  <Unit Name="Jawa" BmpPath="light-side\jawa_jawa.png" />
+  <Unit Name="Jawa Engineer" BmpPath="light-side\jawa_engineer.png" />
+  <Unit Name="Jawa Scavenger" BmpPath="light-side\jawa_scavenger.png" />
+  <Unit Name="Jedi Consular" BmpPath="light-side\jedi_consular_03.png" />
+  <Unit Name="Jedi Knight Anakin" BmpPath="light-side\anakinknight.png" />
+  <Unit Name="Jedi Knight Guardian" BmpPath="light-side\jedi_guardian_01.png" />
+  <Unit Name="Jyn Erso" BmpPath="light-side\jyn.png" />
+  <Unit Name="K-2SO" BmpPath="light-side\k2so.png" />
+  <Unit Name="Kanan Jarrus" BmpPath="light-side\kanan_s3.png" />
+  <Unit Name="Kit Fisto" BmpPath="light-side\kitfisto.png" />
+  <Unit Name="Lando Calrissian" BmpPath="light-side\landobespin.png" />
+  <Unit Name="Lobot" BmpPath="light-side\lobot.png" />
+  <Unit Name="Logray" BmpPath="light-side\ewok_logray.png" />
+  <Unit Name="Luke Skywalker (Farmboy)" BmpPath="light-side\luke_ep4.png" />
+  <Unit Name="Luminara Unduli" BmpPath="light-side\luminara.png" />
+  <Unit Name="Mace Windu" BmpPath="light-side\macewindu.png" />
+  <Unit Name="Obi-Wan Kenobi (Old Ben)" BmpPath="light-side\obiwanep4.png" />
+  <Unit Name="Pao" BmpPath="light-side\pao.png" />
+  <Unit Name="Paploo" BmpPath="light-side\ewok_paploo.png" />
+  <Unit Name="Plo Koon" BmpPath="light-side\plokoon.png" />
+  <Unit Name="Poe Dameron" BmpPath="light-side\poe.png" />
+  <Unit Name="Princess Leia" BmpPath="light-side\leia_princess.png" />
+  <Unit Name="Qui-Gon Jinn" BmpPath="light-side\quigon.png" />
+  <Unit Name="R2-D2" BmpPath="light-side\astromech_r2d2.png" />
+  <Unit Name="Rebel Officer Leia Organa" BmpPath="light-side\leiahoth.png" />
+  <Unit Name="Resistance Pilot" BmpPath="light-side\resistancepilot.png" />
+  <Unit Name="Resistance Trooper" BmpPath="light-side\resistancetrooper.png" />
+  <Unit Name="Rey (Scavenger)" BmpPath="light-side\reyjakku.png" />
+  <Unit Name="Sabine Wren" BmpPath="light-side\sabine_s3.png" />
+  <Unit Name="Scarif Rebel Pathfinder" BmpPath="light-side\rebel_scarif.png" />
+  <Unit Name="Stormtrooper Han" BmpPath="light-side\trooperstorm_han.png" />
+  <Unit Name="Teebo" BmpPath="light-side\ewok_teebo.png" />
+  <Unit Name="Ugnaught" BmpPath="light-side\ugnaught.png" />
+  <Unit Name="Veteran Smuggler Chewbacca" BmpPath="light-side\tfa_chewbacca.png" />
+  <Unit Name="Veteran Smuggler Han Solo" BmpPath="light-side\tfa_han.png" />
+  <Unit Name="Wedge Antilles" BmpPath="light-side\rebelpilot_wedge.png" />
+  <Unit Name="Wicket" BmpPath="light-side\ewok_wicket.png" />
+  <Unit Name="Asajj Ventress" BmpPath="dark-side\ventress.png" />
+  <Unit Name="B2 Super Battle Droid" BmpPath="dark-side\b2.png" />
+  <Unit Name="Boba Fett" BmpPath="dark-side\bobafett.png" />
+  <Unit Name="Cad Bane" BmpPath="dark-side\cadbane.png" />
+  <Unit Name="Captain Han Solo" BmpPath="light-side\hoth_han.png" />
+  <Unit Name="Captain Phasma" BmpPath="dark-side\phasma.png" />
+  <Unit Name="Count Dooku" BmpPath="dark-side\dooku.png" />
+  <Unit Name="Darth Maul" BmpPath="dark-side\maul.png" />
+  <Unit Name="Darth Nihilus" BmpPath="dark-side\nihilus.png" />
+  <Unit Name="Darth Sidious" BmpPath="dark-side\sidious.png" />
+  <Unit Name="Darth Vader" BmpPath="dark-side\vader.png" />
+  <Unit Name="Death Trooper" BmpPath="dark-side\trooperdeath.png" />
+  <Unit Name="Dengar" BmpPath="dark-side\dengar.png" />
+  <Unit Name="Director Krennic" BmpPath="dark-side\krennic.png" />
+  <Unit Name="Emperor Palpatine" BmpPath="dark-side\palpatineemperor.png" />
+  <Unit Name="First Order Officer" BmpPath="dark-side\firstorderofficer.png" />
+  <Unit Name="First Order SF TIE Pilot" BmpPath="dark-side\firstorder_pilot.png" />
+  <Unit Name="First Order Stormtrooper" BmpPath="dark-side\firstordertrooper.png" />
+  <Unit Name="First Order TIE Pilot" BmpPath="dark-side\firstordertiepilot.png" />
+  <Unit Name="Gamorrean Guard" BmpPath="dark-side\gamorreanguard.png" />
+  <Unit Name="Gar Saxon" BmpPath="dark-side\gar_saxon.png" />
+  <Unit Name="General Grievous" BmpPath="dark-side\grievous.png" />
+  <Unit Name="General Veers" BmpPath="dark-side\veers.png" />
+  <Unit Name="Geonosian Soldier" BmpPath="dark-side\geonosian_soldier.png" />
+  <Unit Name="Geonosian Spy" BmpPath="dark-side\geonosian_spy.png" />
+  <Unit Name="Grand Admiral Thrawn" BmpPath="dark-side\thrawn.png" />
+  <Unit Name="Grand Moff Tarkin" BmpPath="dark-side\tarkinadmiral.png" />
+  <Unit Name="Greedo" BmpPath="dark-side\greedo.png" />
+  <Unit Name="HK-47" BmpPath="dark-side\hk47.png" />
+  <Unit Name="IG-100 MagnaGuard" BmpPath="dark-side\magnaguard.png" />
+  <Unit Name="IG-86 Sentinel Droid" BmpPath="dark-side\ig86.png" />
+  <Unit Name="IG-88" BmpPath="dark-side\ig88.png" />
+  <Unit Name="Imperial Super Commando" BmpPath="dark-side\imperial_super_commando.png" />
+  <Unit Name="Kylo Ren" BmpPath="dark-side\kyloren.png" />
+  <Unit Name="Kylo Ren (Unmasked)" BmpPath="dark-side\kylo_unmasked.png" />
+  <Unit Name="Magmatrooper" BmpPath="dark-side\trooperstorm_magma.png" />
+  <Unit Name="Mob Enforcer" BmpPath="dark-side\thug_female_01.png" />
+  <Unit Name="Mother Talzin" BmpPath="dark-side\nightsisters_talzin.png" />
+  <Unit Name="Nightsister Acolyte" BmpPath="dark-side\nightsister_acolyte.png" />
+  <Unit Name="Nightsister Initiate" BmpPath="dark-side\nightsister_initiate.png" />
+  <Unit Name="Nightsister Spirit" BmpPath="dark-side\nightsisters_wraith.png" />
+  <Unit Name="Nightsister Zombie" BmpPath="dark-side\nightsisters_zombie.png" />
+  <Unit Name="Nute Gunray" BmpPath="dark-side\nutegunray.png" />
+  <Unit Name="Old Daka" BmpPath="dark-side\daka.png" />
+  <Unit Name="Poggle the Lesser" BmpPath="dark-side\geonosian_poggle.png" />
+  <Unit Name="Royal Guard" BmpPath="dark-side\royalguard.png" />
+  <Unit Name="Savage Opress" BmpPath="dark-side\savageopress.png" />
+  <Unit Name="Shoretrooper" BmpPath="dark-side\troopershore.png" />
+  <Unit Name="Sith Assassin" BmpPath="dark-side\sithassassin.png" />
+  <Unit Name="Sith Trooper" BmpPath="dark-side\sithtrooper.png" />
+  <Unit Name="Snowtrooper" BmpPath="dark-side\troopersnow.png" />
+  <Unit Name="Stormtrooper" BmpPath="dark-side\trooperstorm.png" />
+  <Unit Name="Sun Fac" BmpPath="dark-side\geonosian_sunfac.png" />
+  <Unit Name="Talia" BmpPath="dark-side\nightsister_talia.png" />
+  <Unit Name="TIE Fighter Pilot" BmpPath="dark-side\tiepilot.png" />
+  <Unit Name="Tusken Raider" BmpPath="dark-side\tuskenraider.png" />
+  <Unit Name="Tusken Shaman" BmpPath="dark-side\tuskenshaman.png" />
+  <Unit Name="URoRRuR'R'R" BmpPath="dark-side\urorrurrr.png" />
+  <Unit Name="Zam Wesell" BmpPath="dark-side\zamwesell.png" />
+  <Unit Name="Ahsoka Tano's Jedi Starfighter" BmpPath="ships\jedi_fighter_ahsoka.png" />
+  <Unit Name="Biggs Darklighter's X-wing" BmpPath="ships\xwing_red3.png" />
+  <Unit Name="Bistan's U-wing" BmpPath="ships\uwing.png" ColorPct="0.98" PixelPct="0.996" />
+  <Unit Name="Cassian's U-wing" BmpPath="ships\uwing_hero.png" />
+  <Unit Name="Chimaera" BmpPath="ships\chimaera.png" />
+  <Unit Name="Clone Sergeant's ARC-170" BmpPath="ships\arc170.png" />
+  <Unit Name="Endurance" BmpPath="ships\venator.png" />
+  <Unit Name="Executrix" BmpPath="ships\stardestroyer.png" />
+  <Unit Name="First Order SF TIE Fighter" BmpPath="ships\fosf_tie_fighter.png" />
+  <Unit Name="First Order TIE Fighter" BmpPath="ships\firstorder_tiefighter.png" />
+  <Unit Name="Gauntlet Starfighter" BmpPath="ships\gauntlet.png" />
+  <Unit Name="Geonosian Soldier's Starfighter" BmpPath="ships\geonosis_fighter_soldier.png" ColorPct="0.985" PixelPct="0.99900000000000011" />
+  <Unit Name="Geonosian Spy's Starfighter" BmpPath="ships\geonosis_fighter_spy.png" />
+  <Unit Name="Ghost" BmpPath="ships\ghost.png" />
+  <Unit Name="Home One" BmpPath="ships\moncalamarilibertycruiser.png" />
+  <Unit Name="Imperial TIE Fighter" BmpPath="ships\tiefighter.png" />
+  <Unit Name="Jedi Consular's Starfighter" BmpPath="ships\jedi_fighter.png" />
+  <Unit Name="Kylo Ren's Command Shuttle" BmpPath="ships\upsilon_shuttle_kylo.png" />
+  <Unit Name="Millennium Falcon (Ep VII)" BmpPath="ships\mfalcon_ep7.png" />
+  <Unit Name="Phantom II" BmpPath="ships\phantom2.png" />
+  <Unit Name="Plo Koon's Jedi Starfighter" BmpPath="ships\jedi_fighter_bladeofdorin.png" />
+  <Unit Name="Poe Dameron's X-wing" BmpPath="ships\xwing_blackone.png" />
+  <Unit Name="Resistance X-wing" BmpPath="ships\xwing_resistance.png" />
+  <Unit Name="Rex's ARC-170" BmpPath="ships\arc170_02.png" />
+  <Unit Name="Scimitar" BmpPath="ships\sithinfiltrator.png" />
+  <Unit Name="Slave I" BmpPath="ships\slave1.png" />
+  <Unit Name="Sun Fac's Geonosian Starfighter" BmpPath="ships\geonosis_fighter_sunfac.png" ColorPct="0.98" />
+  <Unit Name="TIE Advanced x1" BmpPath="ships\tieadvanced.png" />
+  <Unit Name="TIE Reaper" BmpPath="ships\tiereaper.png" />
+  <Unit Name="TIE Silencer" BmpPath="ships\tie_silencer.png" />
+  <Unit Name="Umbaran Starfighter" BmpPath="ships\umbaran_star_fighter.png" />
+  <Unit Name="Wedge Antilles's X-wing" BmpPath="ships\xwing_red2.png" />
+</Units>

@@ -43,8 +43,19 @@ namespace BattlePlanner
             }
         }
 
+        /// <summary>
+        /// Check the latest version of the tool and ask for update before launching
+        /// </summary>
+        /// <returns></returns>
+        private void VersionCheck()
+        {
+            const string url = "https://drive.google.com/open?id=0B_wez8EOgFTGaUEwVHh4cWlFa28";
+        }
+
         private void InitPlanner()
         {
+            VersionCheck();
+
             try
             {
                 // get the settings
@@ -139,7 +150,7 @@ namespace BattlePlanner
                 }
                 catch
                 {
-                    MessageBox.Show("Failed to refresh data.", "Initialize Error",
+                    MessageBox.Show("Failed to refresh data from swgoh.gg. Make sure the Battle Planner directory is not write protected.", "Initialize Error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     Close();
                     return;
