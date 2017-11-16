@@ -49,7 +49,7 @@ namespace BattlePlanner
         /// <returns></returns>
         private void VersionCheck()
         {
-            const string url = "https://drive.google.com/open?id=0B_wez8EOgFTGaUEwVHh4cWlFa28";
+            //const string url = "https://drive.google.com/open?id=0B_wez8EOgFTGaUEwVHh4cWlFa28";
         }
 
         private void InitPlanner()
@@ -220,6 +220,10 @@ namespace BattlePlanner
             Units.RefreshData();
 
             Units.Load();
+
+            // optimize the unit images
+            var format = Compare.GetPlatoonFormat();
+            Units.Optimize(format);
         }
 
         private void ProcessPlatoons(Object stateInfo)

@@ -24,13 +24,16 @@ namespace BattlePlanner
         private double ColorPctBackup = 0.0;
         private bool Saved = false;
 
+        private DonationView ParentView = null;
+
         public static bool CanCreate()
         {
             return (Singleton == null);
         }
 
-        public UnitWindow()
+        public UnitWindow(DonationView parent)
         {
+            ParentView = parent;
             Singleton = this;
             InitializeComponent();
         }
@@ -154,6 +157,12 @@ namespace BattlePlanner
 
             if (Saved)
             {
+                // free parent resources since we are saving
+                if (ParentView != null)
+                {
+                    ParentView.FreeMatchResources();
+                }
+
                 var srcPath = Path.Combine(Directory.GetCurrentDirectory(), "temp");
                 var dstPath = Path.Combine(Directory.GetCurrentDirectory(), "output");
                 var baseName = string.Format("Zone{0}_{1}-{2}_{3}", Platoon.Zone, Platoon.Num, Row, Col);
@@ -165,7 +174,7 @@ namespace BattlePlanner
                     // copy the new matched file over
                     var fileName = Path.GetFileName(file);
                     var dst = Path.Combine(dstPath, fileName);
-                    File.Copy(file, dst);
+                    File.Copy(file, dst, true);
 
                     // update the donation
                     var donation = Donations.Get(Platoon.Zone, Platoon.Num, Row, Col);
@@ -175,6 +184,11 @@ namespace BattlePlanner
                     {
                         // update existing donation
                         donation.Name = unit.Name;
+                    }
+
+                    if (ParentView != null && dst.Length > 0)
+                    {
+                        ParentView.LoadMatch(dst);
                     }
                 }
             }

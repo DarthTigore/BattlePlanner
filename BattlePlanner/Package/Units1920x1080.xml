@@ -10,7 +10,6 @@
   <Unit Name="Biggs Darklighter" BmpPath="light-side\rebelpilot_biggs.png" />
   <Unit Name="Bistan" BmpPath="light-side\bistan.png" />
   <Unit Name="Bodhi Rook" BmpPath="light-side\bodhi.png" />
-  <Unit Name="Han Solo" BmpPath="light-side\han.png" />
   <Unit Name="Cassian Andor" BmpPath="light-side\cassian.png" />
   <Unit Name="CC-2224 &quot;Cody&quot;" BmpPath="light-side\trooperclone_cody.png" />
   <Unit Name="Chief Chirpa" BmpPath="light-side\ewok_chirpa.png" />
@@ -22,7 +21,7 @@
   <Unit Name="Commander Luke Skywalker" BmpPath="light-side\lukebespin.png" />
   <Unit Name="Coruscant Underworld Police" BmpPath="light-side\coruscantpolice.png" />
   <Unit Name="CT-21-0408 &quot;Echo&quot;" BmpPath="light-side\trooperclone_echo.png" ColorPct="0.99" />
-  <Unit Name="CT-5555 &quot;Fives&quot;" BmpPath="light-side\trooperclone_fives.png" />
+  <Unit Name="CT-5555 &quot;Fives&quot;" BmpPath="light-side\trooperclone_fives.png" ColorPct="0.99" />
   <Unit Name="CT-7567 &quot;Rex&quot;" BmpPath="light-side\trooperclone_rex.png" />
   <Unit Name="Dathcha" BmpPath="light-side\jawa_dathcha.png" />
   <Unit Name="Eeth Koth" BmpPath="light-side\eethkoth.png" />
@@ -33,6 +32,7 @@
   <Unit Name="Garazeb &quot;Zeb&quot; Orrelios" BmpPath="light-side\zeb_s3.png" />
   <Unit Name="General Kenobi" BmpPath="light-side\obiwangeneral.png" />
   <Unit Name="Grand Master Yoda" BmpPath="light-side\yodagrandmaster.png" />
+  <Unit Name="Han Solo" BmpPath="light-side\han.png" />
   <Unit Name="Hera Syndulla" BmpPath="light-side\hera_s3.png" />
   <Unit Name="Hermit Yoda" BmpPath="light-side\yodahermit.png" />
   <Unit Name="Hoth Rebel Scout" BmpPath="light-side\rebelhothscout.png" />

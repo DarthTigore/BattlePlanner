@@ -6,6 +6,7 @@ namespace BattlePlanner
     {
         public static double PixelPctDefault = 0.85;
         public static double ColorPctDefault = 0.975;
+        public static int MaxPriority = 100;
 
         public Bitmap Bmp = null;
         public Bitmap Thumb = null;
@@ -18,6 +19,8 @@ namespace BattlePlanner
 
         public double PixelPct = PixelPctDefault;
         public double ColorPct = ColorPctDefault;
+
+        public int Priority = MaxPriority;
 
         public string Group = string.Empty;
 

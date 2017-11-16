@@ -250,6 +250,7 @@ namespace BattlePlanner
                 {
                     XDocument doc = XDocument.Load(UnitsFileName);
                     XElement root = doc.Element("Units");
+                    int priCount = 0;
                     foreach (var element in root.Elements())
                     {
                         var name = element.Attribute("Name").Value;
@@ -283,9 +284,17 @@ namespace BattlePlanner
                         if (defUnit != null)
                         {
                             unit.Group = defUnit.Group;
+                            unit.Priority = defUnit.Priority;
                         }
 
-                        UnitList.Add(unit);
+                        if (unit.Priority < Unit.MaxPriority)
+                        {
+                            UnitList.Insert(priCount++, unit);
+                        }
+                        else
+                        {
+                            UnitList.Add(unit);
+                        }
                     }
 
                     return true;
@@ -338,6 +347,13 @@ namespace BattlePlanner
                         if (attribute != null)
                         {
                             unit.Group = attribute.Value;
+                        }
+
+                        // see if priority was overwritten
+                        attribute = element.Attribute("Pri");
+                        if (attribute != null)
+                        {
+                            unit.Priority = Convert.ToInt32(attribute.Value);
                         }
 
                         DefaultList.Add(unit);

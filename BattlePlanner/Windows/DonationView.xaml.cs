@@ -28,6 +28,7 @@ namespace BattlePlanner
 
         private Bitmap AskBmp = null;
         private Bitmap MatchBmp = null;
+        private string MatchPath = string.Empty;
 
         private bool IgnoreChanges = false;
 
@@ -52,8 +53,6 @@ namespace BattlePlanner
             cbUnitName.SelectedValue = unitName;
 
             // setup the ask image
-            //var uri = new Uri(image1);
-            //AskImage.Source = new BitmapImage(uri);
             AskBmp = new Bitmap(image1);
             var bmpSrc1 = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
               AskBmp.GetHbitmap(),
@@ -62,17 +61,33 @@ namespace BattlePlanner
               BitmapSizeOptions.FromEmptyOptions());
             AskImage.Source = bmpSrc1;
 
-            if (image2 != null)
+            LoadMatch(image2);
+
+            IgnoreChanges = false;
+        }
+
+        public void LoadMatch(string imagePath)
+        {
+            if (imagePath != null)
             {
-                //uri = new Uri(image2);
-                //MatchImage.Source = new BitmapImage(uri);
-                MatchBmp = new Bitmap(image2);
+                MatchBmp = new Bitmap(imagePath);
                 var bmpSrc2 = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(
                   MatchBmp.GetHbitmap(),
                   IntPtr.Zero,
                   Int32Rect.Empty,
                   BitmapSizeOptions.FromEmptyOptions());
                 MatchImage.Source = bmpSrc2;
+
+                if (MatchPath.Length > 0 && MatchPath != imagePath)
+                {
+                    // delete the previous image
+                    try
+                    {
+                        System.IO.File.Delete(MatchPath);
+                    }
+                    catch { }
+                }
+                MatchPath = imagePath;
 
                 cbApproved.IsChecked = true;
             }
@@ -81,8 +96,6 @@ namespace BattlePlanner
                 MatchImage.Source = null;
                 cbApproved.IsChecked = false;
             }
-
-            IgnoreChanges = false;
         }
 
         public void Clear()
@@ -117,7 +130,7 @@ namespace BattlePlanner
                 {
                     var unit = Units.Singleton.GetUnit(unitName);
 
-                    var win = new UnitWindow();
+                    var win = new UnitWindow(this);
                     win.Setup(Platoon, unit, Row, Col);
                     
                     win.Visibility = Visibility.Visible;
@@ -146,6 +159,17 @@ namespace BattlePlanner
                 {
                     donation.Upload = false;
                 }
+            }
+        }
+
+        public void FreeMatchResources()
+        {
+            // free up the match
+            if (MatchBmp != null)
+            {
+                MatchImage.Source = null;
+                MatchBmp.Dispose();
+                MatchBmp = null;
             }
         }
     }

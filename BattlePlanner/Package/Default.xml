@@ -37,4 +37,5 @@
   <Unit Name="Sun Fac's Geonosian Starfighter" Group="GeoShip" />
   <Unit Name="TIE Reaper" PixelPct="0.8" />
   <Unit Name="Wedge Antilles's X-wing" PixelPct="0.9" Group="Xwing" />
+  <Unit Name="TIE Silencer" PixelPct="0.99" Pri="1" />
 </Units>
