@@ -61,12 +61,12 @@ namespace BattlePlanner
               BitmapSizeOptions.FromEmptyOptions());
             AskImage.Source = bmpSrc1;
 
-            LoadMatch(image2);
+            LoadMatch(image2, false);
 
             IgnoreChanges = false;
         }
 
-        public void LoadMatch(string imagePath)
+        public void LoadMatch(string imagePath, bool clearFile)
         {
             if (imagePath != null)
             {
@@ -78,7 +78,7 @@ namespace BattlePlanner
                   BitmapSizeOptions.FromEmptyOptions());
                 MatchImage.Source = bmpSrc2;
 
-                if (MatchPath.Length > 0 && MatchPath != imagePath)
+                if (clearFile && MatchPath.Length > 0 && MatchPath != imagePath)
                 {
                     // delete the previous image
                     try

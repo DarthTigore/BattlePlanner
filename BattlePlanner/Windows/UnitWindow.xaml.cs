@@ -188,7 +188,7 @@ namespace BattlePlanner
 
                     if (ParentView != null && dst.Length > 0)
                     {
-                        ParentView.LoadMatch(dst);
+                        ParentView.LoadMatch(dst, true);
                     }
                 }
             }

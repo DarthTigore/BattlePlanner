@@ -35,6 +35,7 @@
   <Unit Name="Resistance X-wing" PixelPct="0.9" Group="Xwing" />
   <Unit Name="Rex's ARC-170" Group="CloneShip" />
   <Unit Name="Sun Fac's Geonosian Starfighter" Group="GeoShip" />
+  <Unit Name="TIE Advanced x1" PixelPct="0.845" />
   <Unit Name="TIE Reaper" PixelPct="0.8" />
   <Unit Name="Wedge Antilles's X-wing" PixelPct="0.9" Group="Xwing" />
   <Unit Name="TIE Silencer" PixelPct="0.99" Pri="1" />
