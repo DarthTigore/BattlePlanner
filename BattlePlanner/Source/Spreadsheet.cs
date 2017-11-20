@@ -104,38 +104,46 @@ namespace BattlePlanner
                 return;
             }
 
-            // figure out the range
-            var col = "";
-            switch (platoon)
+            try
             {
-                case 2:
-                    col = "H";
-                    break;
-                case 3:
-                    col = "L";
-                    break;
-                case 4:
-                    col = "P";
-                    break;
-                case 5:
-                    col = "T";
-                    break;
-                case 6:
-                    col = "X";
-                    break;
-                case 1:
-                default:
-                    col = "D";
-                    break;
+                // figure out the range
+                var col = "";
+                switch (platoon)
+                {
+                    case 2:
+                        col = "H";
+                        break;
+                    case 3:
+                        col = "L";
+                        break;
+                    case 4:
+                        col = "P";
+                        break;
+                    case 5:
+                        col = "T";
+                        break;
+                    case 6:
+                        col = "X";
+                        break;
+                    case 1:
+                    default:
+                        col = "D";
+                        break;
+                }
+
+                // 2, 20, 38
+                var row1 = 2 + (Settings.DonationsPerPlatoon + 3) * (zone - 1);
+                var row2 = row1 + Settings.DonationsPerPlatoon - 1;
+                var range = string.Format("Platoon!{0}{1}:{2}{3}", col, row1, col, row2);
+
+                // write the data
+                WriteValues(range, names);
             }
-
-            // 2, 20, 38
-            var row1 = 2 + (Settings.DonationsPerPlatoon + 3) * (zone - 1);
-            var row2 = row1 + Settings.DonationsPerPlatoon - 1;
-            var range = string.Format("Platoon!{0}{1}:{2}{3}", col, row1, col, row2);
-
-            // write the data
-            WriteValues(range, names);
+            catch (Exception e)
+            {
+                ErrorLog.AddLine("Spreadsheet.Write - Failed writing values.");
+                ErrorLog.AddLine(e.ToString());
+            }
         }
 
         /// <summary>
@@ -174,23 +182,31 @@ namespace BattlePlanner
         public List<string> ReadValues(string range)
         {
             List<string> results = new List<string>();
-            if (!IsInitialized())
-            {
-                return results;
-            }
-
-            // define request parameters
-            var request = Service.Spreadsheets.Values.Get(Settings.SpreadsheetID, range);
-
-            // get the data
-            var response = request.Execute();
-            IList<IList<Object>> values = response.Values;
-            if (values != null && values.Count > 0)
-            {
-                foreach (var row in values)
+            try
+            { 
+                if (!IsInitialized())
                 {
-                    results.Add(row[0].ToString());
+                    return results;
                 }
+
+                // define request parameters
+                var request = Service.Spreadsheets.Values.Get(Settings.SpreadsheetID, range);
+
+                // get the data
+                var response = request.Execute();
+                IList<IList<Object>> values = response.Values;
+                if (values != null && values.Count > 0)
+                {
+                    foreach (var row in values)
+                    {
+                        results.Add(row[0].ToString());
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                ErrorLog.AddLine("Spreadsheet.ReadValues - Failed to get data from Google Sheets.");
+                ErrorLog.AddLine(e.ToString());
             }
 
             return results;
@@ -253,10 +269,18 @@ namespace BattlePlanner
                 return;
             }
 
-            // send to Sheets
-            var update = Service.Spreadsheets.Values.Update(data, Settings.SpreadsheetID, range);
-            update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
-            var result = update.Execute();
+            try
+            {
+                // send to Sheets
+                var update = Service.Spreadsheets.Values.Update(data, Settings.SpreadsheetID, range);
+                update.ValueInputOption = SpreadsheetsResource.ValuesResource.UpdateRequest.ValueInputOptionEnum.RAW;
+                var result = update.Execute();
+            }
+            catch (Exception e)
+            {
+                ErrorLog.AddLine("Spreadsheet.Send - Failed sending data to Google Sheets.");
+                ErrorLog.AddLine(e.ToString());
+            }
         }
     }
 }

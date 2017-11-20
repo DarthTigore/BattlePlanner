@@ -151,6 +151,7 @@ namespace BattlePlanner
                 }
                 catch (Exception e)
                 {
+                    ErrorLog.AddLine("Preset:Load - " + e.ToString());
                     Console.WriteLine("Exception: {0}", e.ToString());
                 }
             }

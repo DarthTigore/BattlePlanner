@@ -85,7 +85,11 @@ namespace BattlePlanner
                     {
                         System.IO.File.Delete(MatchPath);
                     }
-                    catch { }
+                    catch (Exception e)
+                    {
+                        ErrorLog.AddLine("DonationView.LoadMatch - Unable to delete file: " + MatchPath);
+                        ErrorLog.AddLine(e.ToString());
+                    }
                 }
                 MatchPath = imagePath;
 

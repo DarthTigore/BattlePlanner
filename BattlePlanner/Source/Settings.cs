@@ -66,6 +66,7 @@ namespace BattlePlanner
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine("Settings.Save - " + e.ToString());
                 Console.WriteLine("Exception: {0}", e.ToString());
             }
         }
@@ -98,6 +99,7 @@ namespace BattlePlanner
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine("Settings.Load - " + e.ToString());
                 Console.WriteLine("Exception: {0}", e.ToString());
             }
         }

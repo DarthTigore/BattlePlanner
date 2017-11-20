@@ -55,8 +55,10 @@ namespace BattlePlanner
                     return File.ReadAllText(fileName);
                 }
             }
-            catch
+            catch (Exception e)
             {
+                ErrorLog.AddLine("Failed to load file: " + fileName);
+                ErrorLog.AddLine(e.ToString());
             }
 
             return string.Empty;
@@ -81,6 +83,9 @@ namespace BattlePlanner
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine("Failed to clear directory:" + path);
+                ErrorLog.AddLine(e.ToString());
+
                 Console.WriteLine(e.ToString());
                 return false;
             }
@@ -131,6 +136,9 @@ namespace BattlePlanner
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine("Failed to get web source: " + url);
+                ErrorLog.AddLine(e.ToString());
+
                 Console.WriteLine("Exception: {0}", e.ToString());
                 return string.Empty;
             }

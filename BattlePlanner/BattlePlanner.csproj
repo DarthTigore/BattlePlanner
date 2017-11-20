@@ -113,6 +113,7 @@
     </ApplicationDefinition>
     <Compile Include="Source\Donation.cs" />
     <Compile Include="Source\Donations.cs" />
+    <Compile Include="Source\ErrorLog.cs" />
     <Compile Include="Source\MatchLog.cs" />
     <Compile Include="Source\Presets.cs" />
     <Compile Include="Source\Spreadsheet.cs" />
@@ -246,6 +247,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Changes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Default.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Presets.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Units1920x1080.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

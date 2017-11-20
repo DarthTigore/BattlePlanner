@@ -31,10 +31,12 @@ namespace BattlePlanner
             {
                 InitializeComponent();
 
+                ErrorLog.Clear();
                 InitPlanner();
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine(e.ToString());
                 Console.WriteLine("Exception: {0}", e.ToString());
 
                 MessageBox.Show(e.ToString(), "Initialize Error",
@@ -64,6 +66,7 @@ namespace BattlePlanner
             }
             catch
             {
+                ErrorLog.AddLine("Failed to initialize settings.");
                 MessageBox.Show("Failed to initialize settings.", "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
@@ -77,6 +80,7 @@ namespace BattlePlanner
             }
             catch
             {
+                ErrorLog.AddLine("Failed to initialize Google Sheets.");
                 MessageBox.Show("Failed to initialize Google Sheets.", "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
@@ -113,6 +117,7 @@ namespace BattlePlanner
             }
             catch
             {
+                ErrorLog.AddLine("Failed to load platoon images.");
                 MessageBox.Show("Failed to load platoon images.", "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
@@ -133,6 +138,7 @@ namespace BattlePlanner
                     }
                     catch
                     {
+                        ErrorLog.AddLine("Failed to detect best preset for resolution.");
                         MessageBox.Show("Failed to detect best preset for resolution.", "Initialize Error",
                             MessageBoxButton.OK, MessageBoxImage.Error);
                         Close();
@@ -150,6 +156,7 @@ namespace BattlePlanner
                 }
                 catch
                 {
+                    ErrorLog.AddLine("Failed to refresh data from swgoh.gg.");
                     MessageBox.Show("Failed to refresh data from swgoh.gg. Make sure the Battle Planner directory is not write protected.", "Initialize Error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     Close();
@@ -165,6 +172,7 @@ namespace BattlePlanner
             }
             catch
             {
+                ErrorLog.AddLine("Failed to optimize images.");
                 MessageBox.Show("Failed to optimize images.", "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
@@ -188,6 +196,7 @@ namespace BattlePlanner
                 }
                 catch
                 {
+                    ErrorLog.AddLine("Failed to open the settings window.");
                     MessageBox.Show("Failed to open the settings window.", "Initialize Error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     Close();
@@ -202,6 +211,7 @@ namespace BattlePlanner
             }
             catch
             {
+                ErrorLog.AddLine("Failed to load donations.");
                 MessageBox.Show("Failed to load donations.", "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Presets>
+  <!--Preset Width="" Height="" StartX="" StartY="" CellDim="" OffsetX="" OffsetY="" CompareDim="75" Crop="20"/-->
+  <Preset Width="1136" Height="640" StartX="342" StartY="202" CellDim="62" OffsetX="98" OffsetY="117" CompareDim="62" Crop="16"/>
+  <Preset Width="1280" Height="720" StartX="383" StartY="225" CellDim="73" OffsetX="110" OffsetY="131" CompareDim="73" Crop="19"/>
+  <Preset Width="1334" Height="750" StartX="400" StartY="235" CellDim="75" OffsetX="115" OffsetY="137" CompareDim="75" Crop="20"/>
+  <Preset Width="1920" Height="1080" StartX="580" StartY="342" CellDim="100" OffsetX="165" OffsetY="198" CompareDim="75" Crop="20"/>
+  <Preset Width="2048" Height="1536" StartX="482" StartY="482" CellDim="145" OffsetX="235" OffsetY="283" CompareDim="75" Crop="20"/>
+  <Preset Width="2208" Height="1242" StartX="664" StartY="391" CellDim="120" OffsetX="190" OffsetY="228" CompareDim="75" Crop="20"/>
+  <Preset Width="2560" Height="1440" StartX="773" StartY="455" CellDim="135" OffsetX="220" OffsetY="264" CompareDim="75" Crop="20"/>
+  <Preset Width="2960" Height="1440" StartX="971" StartY="451" CellDim="140" OffsetX="220" OffsetY="264" CompareDim="75" Crop="20"/>
+</Presets>

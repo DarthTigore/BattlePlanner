@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Changes>
+  <Version Value="1.1711.01.0">
+    <Change Value=""/>
+  </Version>
+  <Version Value="1.1711.16.1">
+    <Change Value="Bug Fix: Previewing matches was deleting files from the output directory."/>
+    <Change Value="Added TIE Advanced at 84.5% pixel match."/>
+    <Change Value="Updated instructions with how to use the MatchLog.txt file when trying to figure out what Pixel Percent to use for units."/>
+  </Version>
+  <Version Value="1.1711.19.0">
+    <Change Value="Bug Fix: Cultural PC settings were throwing off some values in Defaults.xml between using '.' and ',' in number formats."/>
+    <Change Value="Exposed Pri and Group for overwriting in Units.xml."/>
+    <Change Value="Ordered units by priority, then by name. This should eliminate differences between when unit data gets refreshed."/>
+    <Change Value="Added more graceful failures when pushing content to Google Sheets fails."/>
+    <Change Value="Added ErrorLog.txt to track errors encountered by the tool as it runs."/>
+    <Change Value="Added Changes.xml for change history."/>
+  </Version>
+</Changes>

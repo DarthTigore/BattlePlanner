@@ -26,6 +26,7 @@ namespace BattlePlanner
     public class Units
     {
         public static string ShipsFilter = "ships";
+        public static System.Globalization.CultureInfo CultureUS;
 
         private static string RootUrl = "https://swgoh.gg/";
         private static string UnitsFileName = "Units.xml";
@@ -38,6 +39,7 @@ namespace BattlePlanner
         public Units()
         {
             Singleton = this;
+            CultureUS = System.Globalization.CultureInfo.GetCultureInfo("en-US");
         }
 
         /// <summary>
@@ -213,11 +215,19 @@ namespace BattlePlanner
                     // only save these values if they are unique
                     if (unit.ColorPct != Unit.ColorPctDefault && (defUnit == null || unit.ColorPct != defUnit.ColorPct))
                     {
-                        unitElement.Add(new XAttribute("ColorPct", unit.ColorPct));
+                        unitElement.Add(new XAttribute("ColorPct", string.Format(CultureUS, "{0:0.000}", unit.ColorPct)));
                     }
                     if (unit.PixelPct != Unit.PixelPctDefault && (defUnit == null || unit.PixelPct != defUnit.PixelPct))
                     {
-                        unitElement.Add(new XAttribute("PixelPct", unit.PixelPct));
+                        unitElement.Add(new XAttribute("PixelPct", string.Format(CultureUS, "{0:0.000}", unit.PixelPct)));
+                    }
+                    if (unit.Priority != Unit.MaxPriority && (defUnit == null || unit.Priority != defUnit.Priority))
+                    {
+                        unitElement.Add(new XAttribute("Pri", unit.Priority));
+                    }
+                    if (unit.Group.Length > 0 && (defUnit == null || unit.Group != defUnit.Group))
+                    {
+                        unitElement.Add(new XAttribute("Group", unit.Group));
                     }
 
                     root.Add(unitElement);
@@ -229,6 +239,7 @@ namespace BattlePlanner
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine("Units.Save - " + e.ToString());
                 Console.WriteLine("Exception: {0}", e.ToString());
             }
         }
@@ -250,7 +261,6 @@ namespace BattlePlanner
                 {
                     XDocument doc = XDocument.Load(UnitsFileName);
                     XElement root = doc.Element("Units");
-                    int priCount = 0;
                     foreach (var element in root.Elements())
                     {
                         var name = element.Attribute("Name").Value;
@@ -262,7 +272,7 @@ namespace BattlePlanner
                         var attribute = element.Attribute("PixelPct");
                         if (attribute != null)
                         {
-                            unit.PixelPct = Convert.ToDouble(attribute.Value);
+                            unit.PixelPct = Convert.ToDouble(attribute.Value.Replace(",", ".").Replace(" ", "."), CultureUS);
                         }
                         else if (defUnit != null)
                         {
@@ -273,39 +283,74 @@ namespace BattlePlanner
                         attribute = element.Attribute("ColorPct");
                         if (attribute != null)
                         {
-                            unit.ColorPct = Convert.ToDouble(attribute.Value);
+                            unit.ColorPct = Convert.ToDouble(attribute.Value.Replace(",", ".").Replace(" ", "."), CultureUS);
                         }
                         else if (defUnit != null)
                         {
                             unit.ColorPct = defUnit.ColorPct;
                         }
 
-                        // see if the unit should be grouped
-                        if (defUnit != null)
+                        // see if priority was overwritten
+                        attribute = element.Attribute("Pri");
+                        if (attribute != null)
                         {
-                            unit.Group = defUnit.Group;
+                            unit.Priority = Convert.ToInt32(attribute.Value);
+                        }
+                        else if (defUnit != null)
+                        {
                             unit.Priority = defUnit.Priority;
                         }
 
-                        if (unit.Priority < Unit.MaxPriority)
+                        // see if group was overwritten
+                        attribute = element.Attribute("Group");
+                        if (attribute != null)
                         {
-                            UnitList.Insert(priCount++, unit);
+                            unit.Group = attribute.Value;
                         }
-                        else
+                        else if (defUnit != null)
                         {
-                            UnitList.Add(unit);
+                            unit.Group = defUnit.Group;
                         }
+
+                        Add(unit);
                     }
 
                     return true;
                 }
                 catch (Exception e)
                 {
+                    ErrorLog.AddLine("Units.Load - " + e.ToString());
                     Console.WriteLine("Exception: {0}", e.ToString());
                 }
             }
 
             return false;
+        }
+
+        /// <summary>
+        /// Add a new unit into the list based on Priority and Name
+        /// </summary>
+        /// <param name="unit"></param>
+        private void Add(Unit unit)
+        {
+            for (var i = 0; i < UnitList.Count; ++i)
+            {
+                if (unit.Priority < UnitList[i].Priority)
+                {
+                    // priority is higher than the current unit, so insert here
+                    UnitList.Insert(i, unit);
+                    return;
+                }
+                else if (unit.Priority == UnitList[i].Priority && string.Compare(unit.Name, UnitList[i].Name) < 0)
+                {
+                    // same priority, but this unit comes first alphabetically
+                    UnitList.Insert(i, unit);
+                    return;
+                }
+            }
+
+            // add the unit if it wasn't already done
+            UnitList.Add(unit);
         }
 
         /// <summary>
@@ -332,14 +377,14 @@ namespace BattlePlanner
                         var attribute = element.Attribute("PixelPct");
                         if (attribute != null)
                         {
-                            unit.PixelPct = Convert.ToDouble(attribute.Value);
+                            unit.PixelPct = Convert.ToDouble(attribute.Value, CultureUS);
                         }
 
                         // see if pixel pct was overwritten
                         attribute = element.Attribute("ColorPct");
                         if (attribute != null)
                         {
-                            unit.ColorPct = Convert.ToDouble(attribute.Value);
+                            unit.ColorPct = Convert.ToDouble(attribute.Value, CultureUS);
                         }
 
                         // see if group was overwritten
@@ -363,6 +408,7 @@ namespace BattlePlanner
                 }
                 catch (Exception e)
                 {
+                    ErrorLog.AddLine("Units.LoadDefaults - " + e.ToString());
                     Console.WriteLine("Exception: {0}", e.ToString());
                 }
             }
@@ -505,7 +551,7 @@ namespace BattlePlanner
 
                 if (!reuseUnit)
                 {
-                    UnitList.Add(unit);
+                    Add(unit);
                 }
             }
         }
@@ -529,6 +575,7 @@ namespace BattlePlanner
             }
             catch (Exception e)
             {
+                ErrorLog.AddLine("Units.DownloadImage - " + e.ToString());
                 Console.WriteLine("Exception: {0}", e.ToString());
             }
         }

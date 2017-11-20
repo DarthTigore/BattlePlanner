@@ -25,8 +25,10 @@ namespace BattlePlanner
             {
                 Bmp = new Bitmap(path);
             }
-            catch
+            catch (Exception e)
             {
+                ErrorLog.AddLine("Failed to load " + path);
+                ErrorLog.AddLine(e.ToString());
                 Console.WriteLine("Failed to load " + path);
             }
 

@@ -88,8 +88,10 @@ namespace BattlePlanner.Windows
 
                     IsReady = true;
                 }
-                catch
+                catch (Exception e)
                 {
+                    ErrorLog.AddLine("SettingsWindow.Populate - " + e.ToString());
+
                     // failed to initialze the window
                     Close();
                 }
@@ -165,8 +167,10 @@ namespace BattlePlanner.Windows
                 // right line
                 DrawLine(x2, y1, x2, y2, isPlatoon);
             }
-            catch
+            catch (Exception e)
             {
+                ErrorLog.AddLine("Failed to draw the debug images in SettingsWindow.DrawGrid.");
+                ErrorLog.AddLine(e.ToString());
                 MessageBox.Show("Failed to draw the debug images in Settings window.", "Input Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
