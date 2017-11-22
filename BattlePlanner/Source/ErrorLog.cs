@@ -19,9 +19,9 @@ namespace BattlePlanner
                     File.Delete(FileName);
                 }
             }
-            catch
+            catch (Exception e)
             {
-                // handle exception...
+                Console.WriteLine("ErrorLog.Clear - " + e.ToString());
             }
         }
 
@@ -35,9 +35,9 @@ namespace BattlePlanner
             {
                 Utils.WriteFile(FileName, entry + Environment.NewLine, true);
             }
-            catch
+            catch (Exception e)
             {
-                // handle exception...
+                Console.WriteLine("ErrorLog.AddLine - " + e.ToString());
             }
         }
     }

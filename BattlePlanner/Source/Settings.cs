@@ -2,6 +2,21 @@
 
 namespace BattlePlanner
 {
+    public class TempSettings
+    {
+        // unit sub-image cropping
+        public static int CompareSize = 75;
+        public static int Crop = 20;
+
+        // platoon coordinate system
+        public static int XStart = 400;
+        public static int YStart = 235;
+        public static int CellDim = 75;
+        public static int XOffset = 40 + CellDim;
+        public static int YOffset = 62 + CellDim;
+
+    }
+
     public class Settings
     {
         // constants

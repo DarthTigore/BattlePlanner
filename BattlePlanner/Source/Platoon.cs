@@ -9,6 +9,7 @@ namespace BattlePlanner
 {
     public class Platoon
     {
+        public static Platoon Singleton = null;
         public static List<Platoon> Platoons = new List<Platoon>();
 
         public Bitmap Bmp = null;
@@ -21,6 +22,7 @@ namespace BattlePlanner
 
         public Platoon(string path, int zone, int num, bool isGround)
         {
+            Singleton = this;
             try
             {
                 Bmp = new Bitmap(path);

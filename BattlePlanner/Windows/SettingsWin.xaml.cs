@@ -5,13 +5,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Drawing;
 
-namespace BattlePlanner.Windows
+namespace BattlePlanner
 {
     /// <summary>
     /// Interaction logic for SettingsWin.xaml
     /// </summary>
     public partial class SettingsWin : Window
     {
+        public static SettingsWin Singleton = null;
+
         public bool IsReady = false;
 
         private Bitmap BmpPlatoon = null;
@@ -22,6 +24,8 @@ namespace BattlePlanner.Windows
 
         public SettingsWin()
         {
+            Singleton = this;
+
             InitializeComponent();
 
             Populate();
@@ -227,11 +231,16 @@ namespace BattlePlanner.Windows
             Close();
         }
 
-        private void buttonRefresh_Click(object sender, RoutedEventArgs e)
+        private void RefreshGrid()
         {
             canvasPlatoon.Children.Clear();
             canvasUnit.Children.Clear();
             DrawGrid();
+        }
+
+        private void buttonRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            RefreshGrid();
         }
 
         private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -244,6 +253,36 @@ namespace BattlePlanner.Windows
         {
             // cleanup resources
             Clear();
+            Singleton = null;
+        }
+
+        /// <summary>
+        /// Reset settings to default values
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonReset_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var platoon = Platoon.Singleton;
+                var preset = Presets.BestFit(platoon.Bmp.Width, platoon.Bmp.Height);
+
+                // update the UI
+                tbStartX.Text = preset.StartX.ToString();
+                tbStartY.Text = preset.StartY.ToString();
+                tbCellDim.Text = preset.CellDim.ToString();
+                tbOffsetX.Text = preset.OffsetX.ToString();
+                tbOffsetY.Text = preset.OffsetY.ToString();
+                tbSubDim.Text = preset.Crop.ToString();
+                tbCompareSize.Text = preset.CompareSize.ToString();
+
+                RefreshGrid();
+            }
+            catch
+            {
+                ErrorLog.AddLine("Failed to detect best preset for resolution.");
+            }
         }
     }
 }

@@ -170,16 +170,16 @@ namespace BattlePlanner
         /// <summary>
         /// Refresh all stored unit images
         /// </summary>
-        public void RefreshData()
+        public void RefreshData(bool fullUpdate = true)
         {
             // get the list of light side heroes
-            RefreshData("characters/f/light-side/", "light-side");
+            RefreshData("characters/f/light-side/", "light-side", fullUpdate);
 
             // get the list of dark side heroes
-            RefreshData("characters/f/dark-side/", "dark-side");
+            RefreshData("characters/f/dark-side/", "dark-side", fullUpdate);
 
             // get the list of heroes
-            RefreshData("ships/", Units.ShipsFilter);
+            RefreshData("ships/", Units.ShipsFilter, fullUpdate);
 
             Save();
         }
@@ -189,12 +189,12 @@ namespace BattlePlanner
         /// </summary>
         /// <param name="filter"></param>
         /// <param name="dir"></param>
-        private void RefreshData(string filter, string dir)
+        private void RefreshData(string filter, string dir, bool fullUpdate)
         {
             // get the list of units
             var url = RootUrl + filter;
             var units = GetSourceUnits(url);
-            DownloadImages(units, dir);
+            DownloadImages(units, dir, fullUpdate);
         }
 
         /// <summary>
@@ -508,23 +508,46 @@ namespace BattlePlanner
         /// </summary>
         /// <param name="units"></param>
         /// <param name="dir"></param>
-        private void DownloadImages(List<SourceUnit> units, string dir)
+        private void DownloadImages(List<SourceUnit> units, string dir, bool fullUpdate)
         {
             var rootPath = Path.Combine(Directory.GetCurrentDirectory(), dir);
-            if (!Directory.Exists(rootPath))
+            if (fullUpdate)
             {
-                Directory.CreateDirectory(rootPath);
-            }
+                if (!Directory.Exists(rootPath))
+                {
+                    Directory.CreateDirectory(rootPath);
+                }
 
-            // clear the directory
-            if (!Utils.ClearDirectory(rootPath))
-            {
-                Utils.LastError = "Data refresh failed to delete old files.";
+                // clear the directory
+                if (!Utils.ClearDirectory(rootPath))
+                {
+                    Utils.LastError = "Data refresh failed to delete old files.";
+                }
             }
 
             // download the images
             foreach (var srcUnit in units)
             {
+                if (!fullUpdate)
+                {
+                    bool unitExists = false;
+
+                    // only download image if it is new
+                    foreach (var cachedUnit in UnitList)
+                    {
+                        if (cachedUnit.Name == srcUnit.Name)
+                        {
+                            unitExists = true;
+                            break;
+                        }
+                    }
+
+                    if (unitExists)
+                    {
+                        continue;
+                    }
+                }
+
                 // strip the root file name (tex.charui_aaylasecura.png)
                 var fileName = Path.GetFileName(srcUnit.Url).Replace("tex.charui_", "");
                 var filePath = Path.Combine(rootPath, fileName);

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BattlePlanner"
         mc:Ignorable="d"
-        Title="Unit Debugger" Height="150" Width="315" ResizeMode="NoResize" Icon="/BattlePlanner;component/Resources/Settings.ico" Closing="Window_Closing">
+        Title="Unit Debugger" Height="168" Width="315" ResizeMode="NoResize" Icon="/BattlePlanner;component/Resources/Settings.ico" Closing="Window_Closing">
 
     <Grid>
         <StackPanel Orientation="Horizontal">
@@ -24,7 +24,9 @@
             </StackPanel>
         </StackPanel>
 
-        <Button x:Name="buttonTest" Height="20" Width="45" Content="Test" Margin="0,70,70,10" HorizontalAlignment="Right" Click="buttonTest_Click"/>
-        <Button x:Name="buttonSave" Height="20" Width="45" Content="Save" Margin="0,70,10,10" HorizontalAlignment="Right" Click="buttonSave_Click"/>
+        <Button x:Name="buttonTest" Height="20" Width="45" Content="Test" Margin="0,70,70,10" HorizontalAlignment="Right" VerticalAlignment="Top" Click="buttonTest_Click"/>
+        <Button x:Name="buttonSave" Height="20" Width="45" Content="Save" Margin="0,70,10,10" HorizontalAlignment="Right" VerticalAlignment="Top" Click="buttonSave_Click"/>
+
+        <Button x:Name="buttonReset" Height="20" Width="85" Content="Reset Defaults" Margin="0,100,20,10" HorizontalAlignment="Right"  VerticalAlignment="Top" Click="buttonReset_Click"/>
     </Grid>
 </Window>

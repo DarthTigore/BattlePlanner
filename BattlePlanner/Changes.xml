@@ -16,4 +16,11 @@
     <Change Value="Added ErrorLog.txt to track errors encountered by the tool as it runs."/>
     <Change Value="Added Changes.xml for change history."/>
   </Version>
+  <Version Value="1.1711.21.0">
+    <Change Value="Closing the app will close all child windows."/>
+    <Change Value="New units on swgoh.gg should auto-download. This will not get unit changes like image or name changes."/>
+    <Change Value="Added Reset Defaults button to Settings Window."/>
+    <Change Value="Added Reset Defaults button to Unit Window."/>
+    <Change Value="Processing units will check if the UI and Spreadsheet phases match before proceeding."/>
+  </Version>
 </Changes>

@@ -10,7 +10,7 @@ namespace BattlePlanner
     /// </summary>
     public partial class UnitWindow : Window
     {
-        private static UnitWindow Singleton = null;
+        public static UnitWindow Singleton = null;
 
         private Platoon Platoon = null;
         private Unit Unit = null;
@@ -193,6 +193,30 @@ namespace BattlePlanner
             }
 
             Singleton = null;
+        }
+
+        private void buttonReset_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // reset the unit's values
+                var defUnit = Units.Singleton.GetDefaultUnit(Unit.Name);
+                if (defUnit != null)
+                {
+                    tbPixelPct.Text = (defUnit.PixelPct * 100.0).ToString();
+                    tbColorPct.Text = (defUnit.ColorPct * 100.0).ToString();
+                }
+                else
+                {
+                    // no default settings, so use the global defaults
+                    tbPixelPct.Text = (Unit.PixelPctDefault * 100.0).ToString();
+                    tbColorPct.Text = (Unit.ColorPctDefault * 100.0).ToString();
+                }
+            }
+            catch (Exception exc)
+            {
+                ErrorLog.AddLine("UnitWindow.Reset - " + exc.ToString());
+            }
         }
     }
 }

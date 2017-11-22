@@ -38,7 +38,7 @@ namespace BattlePlanner
         /// </summary>
         /// <param name="w"></param>
         /// <param name="h"></param>
-        public static void BestFit(int w, int h)
+        public static Preset BestFit(int w, int h, bool useSettings = true)
         {
             Settings.PlatoonW = w;
             Settings.PlatoonH = h;
@@ -48,8 +48,11 @@ namespace BattlePlanner
             {
                 if (preset.Width == w && preset.Height == h)
                 {
-                    ChangeSettings(preset);
-                    return;
+                    if (useSettings)
+                    {
+                        ChangeSettings(preset);
+                    }
+                    return preset;
                 }
             }
 
@@ -59,8 +62,11 @@ namespace BattlePlanner
             {
                 if (preset.AspectRatio == aspectRatio)
                 {
-                    ChangeSettings(preset, w, h);
-                    return;
+                    if (useSettings)
+                    {
+                        ChangeSettings(preset, w, h);
+                    }
+                    return preset;
                 }
             }
 
@@ -77,7 +83,13 @@ namespace BattlePlanner
                     break;
                 }
             }
-            ChangeSettings(last, w, h);
+
+            if (useSettings)
+            {
+                ChangeSettings(last, w, h);
+            }
+
+            return last;
         }
 
         /// <summary>

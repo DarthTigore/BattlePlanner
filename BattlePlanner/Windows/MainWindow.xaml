@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BattlePlanner"
-        xmlns:Windows="clr-namespace:BattlePlanner.Windows" x:Class="BattlePlanner.MainWindow"
+        xmlns:Windows="clr-namespace:BattlePlanner" x:Class="BattlePlanner.MainWindow"
         mc:Ignorable="d"
         Title="Tigore's SWGoH Battle Planner" Height="640" Width="595" Closing="Window_Closing" ResizeMode="NoResize">
 

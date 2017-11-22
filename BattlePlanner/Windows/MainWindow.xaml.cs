@@ -66,8 +66,9 @@ namespace BattlePlanner
             }
             catch
             {
-                ErrorLog.AddLine("Failed to initialize settings.");
-                MessageBox.Show("Failed to initialize settings.", "Initialize Error",
+                var message = "Failed to initialize settings.";
+                ErrorLog.AddLine(message);
+                MessageBox.Show(message, "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
                 return;
@@ -80,8 +81,9 @@ namespace BattlePlanner
             }
             catch
             {
-                ErrorLog.AddLine("Failed to initialize Google Sheets.");
-                MessageBox.Show("Failed to initialize Google Sheets.", "Initialize Error",
+                var message = "Failed to initialize Google Sheets.";
+                ErrorLog.AddLine(message);
+                MessageBox.Show(message, "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
                 return;
@@ -94,6 +96,7 @@ namespace BattlePlanner
             Left = Settings.WinX;
             cbFilter.Text = Settings.Filter;
 
+            // cache platton view controls
             PlatoonViews.Add(PlatoonView1);
             PlatoonViews.Add(PlatoonView2);
             PlatoonViews.Add(PlatoonView3);
@@ -117,8 +120,9 @@ namespace BattlePlanner
             }
             catch
             {
-                ErrorLog.AddLine("Failed to load platoon images.");
-                MessageBox.Show("Failed to load platoon images.", "Initialize Error",
+                var message = "Failed to load platoon images.";
+                ErrorLog.AddLine(message);
+                MessageBox.Show(message, "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
                 return;
@@ -138,8 +142,9 @@ namespace BattlePlanner
                     }
                     catch
                     {
-                        ErrorLog.AddLine("Failed to detect best preset for resolution.");
-                        MessageBox.Show("Failed to detect best preset for resolution.", "Initialize Error",
+                        var message = "Failed to detect best preset for resolution.";
+                        ErrorLog.AddLine(message);
+                        MessageBox.Show(message, "Initialize Error",
                             MessageBoxButton.OK, MessageBoxImage.Error);
                         Close();
                         return;
@@ -148,16 +153,19 @@ namespace BattlePlanner
             }
 
             // load all units
+            bool unitsDownloaded = false;
             if (!Units.Load())
             {
                 try
                 {
                     RefreshData(null);
+                    unitsDownloaded = true;
                 }
                 catch
                 {
-                    ErrorLog.AddLine("Failed to refresh data from swgoh.gg.");
-                    MessageBox.Show("Failed to refresh data from swgoh.gg. Make sure the Battle Planner directory is not write protected.", "Initialize Error",
+                    var message = "Failed to refresh data from swgoh.gg.";
+                    ErrorLog.AddLine(message);
+                    MessageBox.Show(message + " Make sure the Battle Planner directory is not write protected.", "Initialize Error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     Close();
                     return;
@@ -166,14 +174,21 @@ namespace BattlePlanner
 
             try
             {
+                if (!unitsDownloaded)
+                {
+                    // see if there were any new units added since the last download
+                    Units.RefreshData(false);
+                }
+
                 // optimize the unit images
                 var format = Compare.GetPlatoonFormat();
                 Units.Optimize(format);
             }
             catch
             {
-                ErrorLog.AddLine("Failed to optimize images.");
-                MessageBox.Show("Failed to optimize images.", "Initialize Error",
+                var message = "Failed to optimize images.";
+                ErrorLog.AddLine(message);
+                MessageBox.Show(message, "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
                 return;
@@ -184,7 +199,7 @@ namespace BattlePlanner
             {
                 try
                 {
-                    Windows.SettingsWin win = new Windows.SettingsWin();
+                    SettingsWin win = new SettingsWin();
                     win.Visibility = Visibility.Visible;
                     if (!win.IsReady)
                     {
@@ -196,8 +211,9 @@ namespace BattlePlanner
                 }
                 catch
                 {
-                    ErrorLog.AddLine("Failed to open the settings window.");
-                    MessageBox.Show("Failed to open the settings window.", "Initialize Error",
+                    var message = "Failed to open the settings window.";
+                    ErrorLog.AddLine(message);
+                    MessageBox.Show(message, "Initialize Error",
                         MessageBoxButton.OK, MessageBoxImage.Error);
                     Close();
                     return;
@@ -211,8 +227,9 @@ namespace BattlePlanner
             }
             catch
             {
-                ErrorLog.AddLine("Failed to load donations.");
-                MessageBox.Show("Failed to load donations.", "Initialize Error",
+                var message = "Failed to load donations.";
+                ErrorLog.AddLine(message);
+                MessageBox.Show(message, "Initialize Error",
                     MessageBoxButton.OK, MessageBoxImage.Error);
                 Close();
                 return;
@@ -364,6 +381,20 @@ namespace BattlePlanner
 
         private void tbProcess_Click(object sender, RoutedEventArgs e)
         {
+            var sheetPhase = Sheet.GetPhase();
+            var uiPhase = cbPhase.SelectedIndex + 1;
+            if (sheetPhase != uiPhase)
+            {
+                var mbResult = MessageBox.Show("The phase in the UI does not match the phase in the spreadsheet. Are you sure you want to continue?",
+                    "Warning: Phase Mismatch",
+                    MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+                if (mbResult != MessageBoxResult.Yes)
+                {
+                    return;
+                }
+            }
+
             // process the images
             foreach (var view in PlatoonViews)
             {
@@ -402,7 +433,7 @@ namespace BattlePlanner
 
         private void tbSettings_Click(object sender, RoutedEventArgs e)
         {
-            Windows.SettingsWin win = new Windows.SettingsWin();
+            SettingsWin win = new SettingsWin();
             win.Visibility = Visibility.Visible;
         }
 
@@ -429,6 +460,16 @@ namespace BattlePlanner
             Settings.WinX = Convert.ToInt32(Left);
             Settings.WinY = Convert.ToInt32(Top);
             Settings.Save();
+
+            // close all child windows
+            if (SettingsWin.Singleton != null)
+            {
+                SettingsWin.Singleton.Close();
+            }
+            if (UnitWindow.Singleton != null)
+            {
+                UnitWindow.Singleton.Close();
+            }
         }
 
         private void cbFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
