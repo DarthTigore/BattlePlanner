@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Units>
-  <!-- Heroes -->
+  <!-- LS Heroes -->
   <Unit Name="Ahsoka Tano (Fulcrum)" PixelPct="0.65"/>
   <Unit Name="CC-2224 &quot;Cody&quot;" PixelPct="0.99" Group="Clone" />
   <Unit Name="Chief Chirpa" PixelPct="0.65" />
@@ -21,6 +21,17 @@
   <Unit Name="Teebo" PixelPct="0.65" />
   <Unit Name="Wicket" PixelPct="0.65" />
 
+  <!-- DS Heroes -->
+  <Unit Name="Darth Nihilus" PixelPct="0.95" />
+  <Unit Name="Geonosian Soldier" ColorPct="0.95" Group="Geo"/>
+  <Unit Name="Geonosian Spy" ColorPct="0.95" Group="Geo"/>
+  <Unit Name="Kylo Ren" PixelPct="0.98" />
+  <Unit Name="Old Daka" ColorPct="0.95" />
+  <Unit Name="Poggle the Lesser" ColorPct="0.95" Group="Geo"/>
+  <Unit Name="Sith Assassin" PixelPct="0.9" />
+  <Unit Name="Sun Fac" Group="Geo"/>
+  <Unit Name="Tusken Shaman" ColorPct="0.95"/>
+
   <!-- Ships -->
   <Unit Name="Ahsoka Tano's Jedi Starfighter" PixelPct="0.7" />
   <Unit Name="Biggs Darklighter's X-wing" PixelPct="0.9" Group="Xwing" />
@@ -38,5 +49,5 @@
   <Unit Name="TIE Advanced x1" PixelPct="0.845" />
   <Unit Name="TIE Reaper" PixelPct="0.8" />
   <Unit Name="Wedge Antilles's X-wing" PixelPct="0.9" Group="Xwing" />
-  <Unit Name="TIE Silencer" PixelPct="0.99" Pri="1" />
+  <Unit Name="TIE Silencer" ColorPct="0.98" PixelPct="0.99" Pri="1" />
 </Units>

@@ -23,4 +23,9 @@
     <Change Value="Added Reset Defaults button to Unit Window."/>
     <Change Value="Processing units will check if the UI and Spreadsheet phases match before proceeding."/>
   </Version>
+  <Version Value="1.1711.25.0">
+    <Change Value="Bug Fix: Changing the filter (LS/DS) now saves correctly."/>
+    <Change Value="Phase 1 will now check both ground zones."/>
+    <Change Value="Initial Dark Side default unit settings."/>
+  </Version>
 </Changes>

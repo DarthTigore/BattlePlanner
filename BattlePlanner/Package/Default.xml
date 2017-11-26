@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Units>
-  <!-- Heroes -->
+  <!-- LS Heroes -->
   <Unit Name="Ahsoka Tano (Fulcrum)" PixelPct="0.65"/>
   <Unit Name="CC-2224 &quot;Cody&quot;" PixelPct="0.99" Group="Clone" />
   <Unit Name="Chief Chirpa" PixelPct="0.65" />
@@ -20,6 +20,17 @@
   <Unit Name="R2-D2" PixelPct="0.8" />
   <Unit Name="Teebo" PixelPct="0.65" />
   <Unit Name="Wicket" PixelPct="0.65" />
+
+  <!-- DS Heroes -->
+  <Unit Name="Darth Nihilus" PixelPct="0.95" />
+  <Unit Name="Geonosian Soldier" ColorPct="0.95" Group="Geo"/>
+  <Unit Name="Geonosian Spy" ColorPct="0.95" Group="Geo"/>
+  <Unit Name="Kylo Ren" PixelPct="0.98" />
+  <Unit Name="Old Daka" ColorPct="0.95" />
+  <Unit Name="Poggle the Lesser" ColorPct="0.95" Group="Geo"/>
+  <Unit Name="Sith Assassin" PixelPct="0.9" />
+  <Unit Name="Sun Fac" Group="Geo"/>
+  <Unit Name="Tusken Shaman" ColorPct="0.95"/>
 
   <!-- Ships -->
   <Unit Name="Ahsoka Tano's Jedi Starfighter" PixelPct="0.7" />

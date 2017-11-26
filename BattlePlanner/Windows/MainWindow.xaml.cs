@@ -324,7 +324,7 @@ namespace BattlePlanner
 
         private string GetFilter()
         {
-            var filter = cbFilter.SelectionBoxItem.ToString();
+            var filter = ((ComboBoxItem)cbFilter.SelectedItem).Content.ToString();
             return filter;
         }
 
@@ -338,14 +338,11 @@ namespace BattlePlanner
             {
                 ++zone;
                 view.Visibility = Visibility.Hidden;
-                if (zone == 1 || phase >= 2)
+                var platoon = Platoon.Get(zone, PlatoonNum);
+                if (platoon != null)
                 {
-                    var platoon = Platoon.Get(zone, PlatoonNum);
-                    if (platoon != null)
-                    {
-                        view.Setup(platoon, Units, phase, zone, filter);
-                        view.Visibility = Visibility.Visible;
-                    }
+                    view.Setup(platoon, Units, phase, zone, filter);
+                    view.Visibility = Visibility.Visible;
                 }
             }
         }
@@ -457,6 +454,7 @@ namespace BattlePlanner
         {
             // update the settings before closing
             Settings.Phase = cbPhase.SelectedIndex + 1;
+            Settings.Filter = GetFilter();
             Settings.WinX = Convert.ToInt32(Left);
             Settings.WinY = Convert.ToInt32(Top);
             Settings.Save();
