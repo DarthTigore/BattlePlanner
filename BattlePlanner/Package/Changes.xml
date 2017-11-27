@@ -28,4 +28,9 @@
     <Change Value="Phase 1 will now check both ground zones."/>
     <Change Value="Initial Dark Side default unit settings."/>
   </Version>
+  <Version Value="1.1711.26.0">
+    <Change Value="Bug Fix: Auto uploading will leave slots blank if no match instead of putting empty slots at the end."/>
+    <Change Value="Bug Fix: Manually uploading in phase 1 will now upload both zones."/>
+    <Change Value="Additional unit tweaks for DS and ships."/>
+  </Version>
 </Changes>

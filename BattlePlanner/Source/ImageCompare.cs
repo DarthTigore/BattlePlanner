@@ -280,6 +280,7 @@ namespace BattlePlanner
                 var pct = Math.Min(100.0, 100.0 * Convert.ToDouble(closest) / Convert.ToDouble(match.Small.Width * match.Small.Height));
                 MatchLog.Add(string.Format("Z{0} P{1} {2},{3} (Unmatched): {4} @ {5:0.00}%",
                     platoon.Zone, platoon.Num, row + 1, col + 1, match.Name, pct));
+                platoon.UnitNames.Add(string.Empty);
             }
 
             // cache the donation

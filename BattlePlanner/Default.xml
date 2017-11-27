@@ -23,17 +23,20 @@
 
   <!-- DS Heroes -->
   <Unit Name="Darth Nihilus" PixelPct="0.95" />
+  <Unit Name="Gar Saxon" ColorPct="0.95" />
   <Unit Name="Geonosian Soldier" ColorPct="0.95" Group="Geo"/>
   <Unit Name="Geonosian Spy" ColorPct="0.95" Group="Geo"/>
-  <Unit Name="Kylo Ren" PixelPct="0.98" />
+  <Unit Name="General Grievous" ColorPct="0.95" />
+  <Unit Name="Kylo Ren" PixelPct="0.98" Group="DS Black"/>
+  <Unit Name="Nightsister Spirit" ColorPct="0.95"/>
   <Unit Name="Old Daka" ColorPct="0.95" />
   <Unit Name="Poggle the Lesser" ColorPct="0.95" Group="Geo"/>
-  <Unit Name="Sith Assassin" PixelPct="0.9" />
+  <Unit Name="Sith Assassin" PixelPct="0.9" Group="DS Black"/>
   <Unit Name="Sun Fac" Group="Geo"/>
   <Unit Name="Tusken Shaman" ColorPct="0.95"/>
 
   <!-- Ships -->
-  <Unit Name="Ahsoka Tano's Jedi Starfighter" PixelPct="0.7" />
+  <Unit Name="Ahsoka Tano's Jedi Starfighter" PixelPct="0.66" />
   <Unit Name="Biggs Darklighter's X-wing" PixelPct="0.9" Group="Xwing" />
   <Unit Name="Bistan's U-wing" PixelPct="0.999" Group="Uwing" />
   <Unit Name="Cassian's U-wing" PixelPct="0.999" Group="Uwing" />
@@ -46,8 +49,8 @@
   <Unit Name="Resistance X-wing" PixelPct="0.9" Group="Xwing" />
   <Unit Name="Rex's ARC-170" Group="CloneShip" />
   <Unit Name="Sun Fac's Geonosian Starfighter" Group="GeoShip" />
-  <Unit Name="TIE Advanced x1" PixelPct="0.845" />
+  <Unit Name="TIE Advanced x1" PixelPct="0.79" />
   <Unit Name="TIE Reaper" PixelPct="0.8" />
-  <Unit Name="Wedge Antilles's X-wing" PixelPct="0.9" Group="Xwing" />
   <Unit Name="TIE Silencer" ColorPct="0.98" PixelPct="0.99" Pri="1" />
+  <Unit Name="Wedge Antilles's X-wing" PixelPct="0.87" Group="Xwing" />
 </Units>

@@ -414,16 +414,14 @@ namespace BattlePlanner
             {
                 for (int zone = 1; zone <= Settings.MaxZones; ++zone)
                 {
-                    if (phase < 3 && zone > phase)
-                    {
-                        continue;
-                    }
-
                     var platoon = Platoon.Get(zone, platoonNum);
-                    var names = GetPlatoonNames(platoon, Units, phase, zone, filter);
-                    var zoneOffset = (groundOnly) ? 1 : 0;
+                    if (platoon != null)
+                    {
+                        var names = GetPlatoonNames(platoon, Units, phase, zone, filter);
+                        var zoneOffset = (groundOnly) ? 1 : 0;
 
-                    Sheet.Write(names, zone + zoneOffset, platoon.Num);
+                        Sheet.Write(names, zone + zoneOffset, platoon.Num);
+                    }
                 }
             }
         }
