@@ -2,6 +2,7 @@
 <Units>
   <!-- LS Heroes -->
   <Unit Name="Ahsoka Tano (Fulcrum)" PixelPct="0.65"/>
+  <Unit Name="Ahsoka Tano" ColorPct="0.95"/>
   <Unit Name="CC-2224 &quot;Cody&quot;" PixelPct="0.99" Group="Clone" />
   <Unit Name="Chief Chirpa" PixelPct="0.65" />
   <Unit Name="Chief Nebit" ColorPct="0.985" PixelPct="0.99" Group="Jawa" />
@@ -19,6 +20,8 @@
   <Unit Name="Paploo" PixelPct="0.65" />
   <Unit Name="R2-D2" PixelPct="0.8" />
   <Unit Name="Teebo" PixelPct="0.65" />
+  <Unit Name="Veteran Smuggler Chewbacca" ColorPct="0.95" />
+  <Unit Name="Veteran Smuggler Han Solo" ColorPct="0.95" />
   <Unit Name="Wicket" PixelPct="0.65" />
 
   <!-- DS Heroes -->

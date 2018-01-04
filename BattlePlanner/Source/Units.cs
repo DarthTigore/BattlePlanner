@@ -173,10 +173,10 @@ namespace BattlePlanner
         public void RefreshData(bool fullUpdate = true)
         {
             // get the list of light side heroes
-            RefreshData("characters/f/light-side/", "light-side", fullUpdate);
+            RefreshData("characters/f/Light%20Side/", "light-side", fullUpdate);
 
             // get the list of dark side heroes
-            RefreshData("characters/f/dark-side/", "dark-side", fullUpdate);
+            RefreshData("characters/f/Dark%20Side/", "dark-side", fullUpdate);
 
             // get the list of heroes
             RefreshData("ships/", Units.ShipsFilter, fullUpdate);

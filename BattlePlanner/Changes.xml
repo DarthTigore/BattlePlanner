@@ -33,4 +33,7 @@
     <Change Value="Bug Fix: Manually uploading in phase 1 will now upload both zones."/>
     <Change Value="Additional unit tweaks for DS and ships."/>
   </Version>
+  <Version Value="1.1801.04.0">
+    <Change Value="Bug Fix: Updated to use the new alignment links from swgoh.gg."/>
+  </Version>
 </Changes>
